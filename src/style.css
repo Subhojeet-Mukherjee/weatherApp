@@ -4,9 +4,10 @@
 }
 body{
     background: #222;
+    margin:0;
 }
 .card{
-    width: 90%;
+    width: 100%;
     max-width: 470px; 
     background: linear-gradient(135deg, #105786, #2bbbf0);
 
