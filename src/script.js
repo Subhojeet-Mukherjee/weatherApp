@@ -21,7 +21,7 @@ async function checkWeather(city) {
             document.querySelector(".temp").textContent= Math.round(data.main.temp) +"°C";
             document.querySelector(".humidity").textContent= data.main.humidity+"%";
             document.querySelector(".wind").textContent= data.wind.speed+" km/h";
-            document.querySelector(".time").textContent=`Last Updated at ${new Date(data.dt).toLocaleString('en-IN',{hour12: false})}`
+            document.querySelector(".time").textContent=`Last Updated at ${new Date(data.dt *1000).toLocaleString('en-IN',{hour12: false})}`
             switch (data.weather[0].main) {
                 case "Clouds":
                     weatherIcon.src="images/clouds.png"
