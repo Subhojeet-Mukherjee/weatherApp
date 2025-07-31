@@ -10,7 +10,6 @@ async function checkWeather(city) {
         try {
         const response= await fetch(apiURL);
         const data= await response.json();
-        console.log(data.cod)
         if (data.cod === "404" || data.cod=== "400") {
             alert("City not found. Please enter a valid city name.");
             
@@ -22,7 +21,7 @@ async function checkWeather(city) {
             document.querySelector(".temp").textContent= Math.round(data.main.temp) +"°C";
             document.querySelector(".humidity").textContent= data.main.humidity+"%";
             document.querySelector(".wind").textContent= data.wind.speed+" km/h";
-
+            document.querySelector(".time").textContent=`Last Updated at ${new Date(data.dt).toLocalString('en-IN',{hour12: false})}`
             switch (data.weather[0].main) {
                 case "Clouds":
                     weatherIcon.src="images/clouds.png"
